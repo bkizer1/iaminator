@@ -2,9 +2,33 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Action": "ec2:startInstances",
-            "Resource": "*",
-            "Effect": "Allow"
+            "Sid": "TheseActionsDontSupportResourceLevelPermissions",
+            "Effect": "Allow",
+            "Action": ["ec2:Describe*"],
+            "Resource": "*"
+        },
+        {
+            "Sid": "ThisActionSupportsResourceLevelPermissions",
+            "Effect": "Allow",
+            "Action": ["ec2:RunInstances"],
+            "Resource": [
+                "arn:aws:ec2:us-east-1:accountid:instance/*",
+                "arn:aws:ec2:us-east-1:accountid:key-pair/*",
+                "arn:aws:ec2:us-east-1:accountid:security-group/*",
+                "arn:aws:ec2:us-east-1:accountid:volume/*",
+                "arn:aws:ec2:us-east-1::image/ami-*",
+		"arn:aws:ec2:us-east-1:accountid:network-interface/*",
+                "arn:aws:ec2:us-east-1:accountid:subnet/*"
+		]
+        },
+        {
+            "Sid": "TheseActionsSupportResourceLevelPermissions",
+            "Effect": "Allow",
+            "Action": [
+                  "ec2:TerminateInstances",
+                  "ec2:StopInstances",
+                  "ec2:StartInstances"],
+            "Resource": "arn:aws:ec2:us-east-1:accountid:instance/*"
         }
     ]
 }
