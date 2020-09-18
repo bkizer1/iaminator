@@ -4,7 +4,7 @@
         {
             "Sid": "TheseActionsDontSupportResourceLevelPermissions",
             "Effect": "Allow",
-            "Action": ["ec2:*"],
+            "Action": ["ec2:RunInstances"],
             "Resource": "*"
         }
     ]
