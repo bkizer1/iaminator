@@ -20,6 +20,6 @@ jobs:
       - uses: actions/checkout@v2
         
       - name: iaminator
-        uses: xen0l/iam-lint@v1
+        uses: xen0l/iam-lint@v2
         with:
           path: 'policies'
