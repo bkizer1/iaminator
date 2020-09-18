@@ -1,0 +1,20 @@
+name: Test
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: xen0l/iam-lint@v1
+
+    - name: Run tests
+      run: ./tests/tests.sh
+
+    - name: Lint
+      run: ./tests/lint.sh
