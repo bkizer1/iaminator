@@ -3,7 +3,7 @@
     "Statement": [
         {
             "Action": "ec2:startInstances",
-            "Resource": ["arn:aws:s3:::my_other_bucket/*","arn:aws:s3:::my_other_bucket"],
+            "Resource": "*",
             "Effect": "Allow"
         }
     ]
