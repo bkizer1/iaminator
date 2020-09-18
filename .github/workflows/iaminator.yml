@@ -1,4 +1,4 @@
-name: Test
+name: iaminator
 
 on:
   push:
@@ -11,4 +11,7 @@ jobs:
 
     steps:
       - name: iam-lint
-        uses: xen0l/iam-lint@v2
+      - uses: actions/checkout@v2
+      - uses: xen0l/iam-lint@v1
+        with:
+          path: 'policies'
