@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: iam-lint
-      uses: xen0l/iam-lint@v2
+        uses: xen0l/iam-lint@v2
